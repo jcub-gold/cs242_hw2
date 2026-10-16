@@ -32,6 +32,7 @@ def nil  = \f.\x. x;
 # Helper Functions
 def or = \x.\y. x tt y;
 def and = \x.\y. x y ff;
+def add = \x.\y. x succ y;
 
 def is_zero  = pair (and ff) tt;
 def len      = pair (\x.\y. succ y) _0;
@@ -46,17 +47,23 @@ def half     = \n. n;
 #########
 # NOTE: Expected outputs are given as comments on each line.
 
-section_or;
+helper_section_or;
 (or tt tt) x y;  # x
 (or tt ff) x y;  # x
 (or ff tt) x y;  # x
 (or ff ff) x y;  # y
 
-section_and;
+helper_section_and;
 (or tt tt) x y;  # x
 (or tt ff) x y;  # y
 (or ff tt) x y;  # y
 (or ff ff) x y;  # y
+
+helper_section_add;
+(add _0 _0) f x;  # x
+(add _0 _1) f x;  # (f x)
+(add _1 _1) f x;  # (f (f x))
+(add _1 _2) f x;  # (f (f (f x)))
 
 section_is_zero; # This symbol will just be printed, so we can keep track of the output.
 (is_zero _0) x y;  # x
