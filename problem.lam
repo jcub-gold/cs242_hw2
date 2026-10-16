@@ -31,8 +31,9 @@ def nil  = \f.\x. x;
 # BEGIN_YOUR_CODE
 # Helper Functions
 def or = \x.\y. x tt y;
+def and \x.\y. x y ff;
 
-def is_zero  = \n. n;
+def is_zero  = pair (and ff) tt;
 def len      = \l. l;
 def num_zero = \l. l;
 def fib      = \n. n;
@@ -49,6 +50,12 @@ section_or;
 (or tt tt) x y;  # x
 (or tt ff) x y;  # x
 (or ff tt) x y;  # x
+(or ff ff) x y;  # y
+
+section_and;
+(or tt tt) x y;  # x
+(or tt ff) x y;  # y
+(or ff tt) x y;  # y
 (or ff ff) x y;  # y
 
 section_is_zero; # This symbol will just be printed, so we can keep track of the output.
