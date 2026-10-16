@@ -1,0 +1,7 @@
+# examples from assignment handout
+
+\x.\y.y;
+\x.\y.x;
+
+# a random third example because your TAs are nice :)
+\x.\y.x y;
