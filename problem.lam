@@ -42,8 +42,7 @@ def next_dec_pair_helper = \x.\y.\z. (pair z (add _1 z));
 def next_dec_pair = \x. next_dec_pair_helper pair (x fst) (x snd);
 
 def is_odd = \n. n not ff;
-def inc = \n. and (not (is_zero n)) (is_odd n);
-def next_half_pair_helper = \x.\y.\z. (pair (pair (succ y) y (inc z)) (succ z));
+def next_half_pair_helper = \x.\y.\z. (pair (pair (succ y) y (is_odd z)) (succ z));
 def next_half_pair = \x. next_half_pair_helper pair (x fst) (x snd);
 
 
@@ -77,6 +76,17 @@ helper_section_add;
 (add _0 _1) f x;  # (f x)
 (add _1 _1) f x;  # (f (f x))
 (add _1 _2) f x;  # (f (f (f x)))
+
+helper_section_not;
+(not tt) x y;  # y
+(not ff) x y;  # x
+
+helper_section_is_odd;
+(is_odd _0) x y;  # y
+(is_odd _1) x y;  # x
+(is_odd _2) x y;  # y
+(is_odd _3) x y;  # x
+
 
 section_is_zero; # This symbol will just be printed, so we can keep track of the output.
 (is_zero _0) x y;  # x
