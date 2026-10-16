@@ -1,11 +1,13 @@
 # examples from assignment handout
 
+# implement S
+def S = \x.\y.\z. (x z) (y z);
+
 \x.\y.y;
 \x.\y.x;
 
 # a random third example because your TAs are nice :)
 \x.\y.x y;
 
-# implement S
-def S = \x.\y.\z. (x z) (y z);
+# test S
 S x y z;
