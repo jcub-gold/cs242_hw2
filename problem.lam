@@ -37,7 +37,7 @@ def add = \x.\y. x succ y;
 def is_zero  = pair (and ff) tt;
 def len      = pair (\x.\y. succ y) _0;
 def num_zero = pair (\x.\y. (is_zero x) (succ y) y) _0;
-def fib      = \n. n;
+def fib      = \n. (fst (n (\x.\y. add x y x) (_1 _1)));
 def dec      = \n. n;
 def half     = \n. n;
 # END_YOUR_CODE
