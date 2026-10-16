@@ -66,10 +66,10 @@ helper_section_or;
 (or ff ff) x y;  # y
 
 helper_section_and;
-(or tt tt) x y;  # x
-(or tt ff) x y;  # y
-(or ff tt) x y;  # y
-(or ff ff) x y;  # y
+(and tt tt) x y;  # x
+(and tt ff) x y;  # y
+(and ff tt) x y;  # y
+(and ff ff) x y;  # y
 
 helper_section_add;
 (add _0 _0) f x;  # x
