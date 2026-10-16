@@ -38,7 +38,7 @@ def not = \x. x ff tt;
 def next_fib_pair_helper = \x.\y.\z. (pair z (add y z));
 def next_fib_pair = \x. next_fib_pair_helper pair (x fst) (x snd);
 
-def next_dec_pair_helper = \x.\y.\z. (pair z (add _1 z));
+def next_dec_pair_helper = \x.\y.\z. (pair z (succ z));
 def next_dec_pair = \x. next_dec_pair_helper pair (x fst) (x snd);
 
 def is_odd = \n. n not ff;
