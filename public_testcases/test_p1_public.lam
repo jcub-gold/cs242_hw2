@@ -1,7 +1,7 @@
 # examples from assignment handout
 
 # implement S
-def S = \x.\y.\z. (x z) (y z);
+def s = \x.\y.\z. (x z) (y z);
 
 \x.\y.y;
 \x.\y.x;
@@ -10,4 +10,4 @@ def S = \x.\y.\z. (x z) (y z);
 \x.\y.x y;
 
 # test S
-S x y z;
+s x y z;
