@@ -7,4 +7,4 @@
 \x.\y.x y;
 
 # implement S
-\x.\y.\z. (x z) (y z)
+\x.\y.\z. (x z) (y z);
