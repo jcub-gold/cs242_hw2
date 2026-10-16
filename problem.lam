@@ -34,7 +34,7 @@ def or = \x.\y. x tt y;
 def and = \x.\y. x y ff;
 
 def is_zero  = pair (and ff) tt;
-def len      = \l. l;
+def len      = pair (\x.\y. succ y) _0;
 def num_zero = \l. l;
 def fib      = \n. n;
 def dec      = \n. n;
