@@ -35,7 +35,7 @@ def and = \x.\y. x y ff;
 
 def is_zero  = pair (and ff) tt;
 def len      = pair (\x.\y. succ y) _0;
-def num_zero = \l. l;
+def num_zero = pair (\x.\y. (is_zero x) (succ y) y) _0;
 def fib      = \n. n;
 def dec      = \n. n;
 def half     = \n. n;
