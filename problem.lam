@@ -33,17 +33,26 @@ def nil  = \f.\x. x;
 def or = \x.\y. x tt y;
 def and = \x.\y. x y ff;
 def add = \x.\y. x succ y;
+def not = \x. x ff tt;
+
 def next_fib_pair_helper = \x.\y.\z. (pair z (add y z));
 def next_fib_pair = \x. next_fib_pair_helper pair (x fst) (x snd);
+
 def next_dec_pair_helper = \x.\y.\z. (pair z (add _1 z));
 def next_dec_pair = \x. next_dec_pair_helper pair (x fst) (x snd);
+
+def is_odd = \n. n not ff;
+def inc = \n. and (not (is_zero n)) (not (is_odd n));
+def next_half_pair_helper = \x.\y.\z. (pair (pair (add y _1) y (inc z)) (add z _1));
+def next_half_pair = \x. next_half_pair_helper pair (x fst) (x snd);
+
 
 def is_zero  = pair (and ff) tt;
 def len      = pair (\x.\y. succ y) _0;
 def num_zero = pair (\x.\y. (is_zero x) (succ y) y) _0;
 def fib      = \n. (n next_fib_pair (pair _1 _2)) fst;
 def dec      = \n. (n next_dec_pair (pair _0 _0)) fst;
-def half     = \n. n;
+def half     = \n. (n next_half_pair (pair _0 _0)) fst;
 # END_YOUR_CODE
 
 #########
