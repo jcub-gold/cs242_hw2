@@ -42,8 +42,8 @@ def next_dec_pair_helper = \x.\y.\z. (pair z (add _1 z));
 def next_dec_pair = \x. next_dec_pair_helper pair (x fst) (x snd);
 
 def is_odd = \n. n not ff;
-def inc = \n. and (not (is_zero n)) (not (is_odd n));
-def next_half_pair_helper = \x.\y.\z. (pair (pair (add y _1) y (inc z)) (add z _1));
+def inc = \n. and (not (is_zero n)) (is_odd n);
+def next_half_pair_helper = \x.\y.\z. (pair (pair (succ y) y (inc z)) (succ z));
 def next_half_pair = \x. next_half_pair_helper pair (x fst) (x snd);
 
 
