@@ -1,3 +1,5 @@
+raise ImportError()
+
 import src.ski as ski
 
 ##########
