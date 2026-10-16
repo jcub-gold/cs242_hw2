@@ -1,6 +1,6 @@
 # examples from assignment handout
 
-# implement S
+# implement s
 def s = \x.\y.\z. (x z) (y z);
 
 \x.\y.y;
@@ -9,5 +9,5 @@ def s = \x.\y.\z. (x z) (y z);
 # a random third example because your TAs are nice :)
 \x.\y.x y;
 
-# test S
+# test s
 s x y z;
