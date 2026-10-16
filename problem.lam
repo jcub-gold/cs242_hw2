@@ -29,6 +29,9 @@ def nil  = \f.\x. x;
 # TASK: Implement the following functions.
 
 # BEGIN_YOUR_CODE
+# Helper Functions
+def or = \x.\y. x tt y;
+
 def is_zero  = \n. n;
 def len      = \l. l;
 def num_zero = \l. l;
@@ -41,6 +44,12 @@ def half     = \n. n;
 # TESTS #
 #########
 # NOTE: Expected outputs are given as comments on each line.
+
+section_or;
+(or tt tt) x y;  # x
+(or tt ff) x y;  # x
+(or ff tt) x y;  # x
+(or ff ff) x y;  # y
 
 section_is_zero; # This symbol will just be printed, so we can keep track of the output.
 (is_zero _0) x y;  # x
