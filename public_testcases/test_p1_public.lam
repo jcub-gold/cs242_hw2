@@ -5,3 +5,6 @@
 
 # a random third example because your TAs are nice :)
 \x.\y.x y;
+
+# implement S
+\x.\y.\z. (x z) (y z)
